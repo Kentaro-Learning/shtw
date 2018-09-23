@@ -25,18 +25,33 @@
         
         <p>中衛</p>
         @foreach ($characters as $character)
+        
             @if ($character->position == 2)
-                {!! Form::label('name', $character->name) !!}
-                {{Form::checkbox('enemy_id[]', $character->id)}}
+                <li>    
+                    <div class="image_box form-group" >
+                        <label>
+                        <img class="thumbnail" src="{{ secure_asset($character->image) }}">
+                        {{Form::checkbox('enemy_id[]', $character->id, null, ['class' => 'disabled_checkbox'])}}
+                        {{$character->name}}</label>
+                    </div>  
+                </li> 
             @endif
+            
         @endforeach
         <p>後衛</p>
         @foreach ($characters as $character)
             @if ($character->position == 3)
-                {!! Form::label('name', $character->name) !!}
-                {{Form::checkbox('enemy_id[]', $character->id)}}
+                <li>    
+                    <div class="image_box form-group" >
+                        <label>
+                        <img class="thumbnail" src="{{ secure_asset($character->image) }}">
+                        {{Form::checkbox('enemy_id[]', $character->id, null, ['class' => 'disabled_checkbox'])}}
+                        {{$character->name}}</label>
+                    </div>  
+                </li> 
             @endif
         @endforeach
+        
         <div class="form-group">
             <?php $today = \Carbon\Carbon::now(); ?>
             {!! Form::label('date', '日付') !!}
