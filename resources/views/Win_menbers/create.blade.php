@@ -24,15 +24,23 @@
         <p>中衛</p>
         @foreach ($characters as $character)
             @if ($character->position == 2)
-                {!! Form::label('name', $character->name) !!}
-                {{Form::checkbox('my_menber[]', $character->id)}}
+                <li><div class="image_box form-group" >
+                    <label>
+                    <img class="thumbnail" src="{{ secure_asset($character->image) }}">
+                    {{Form::checkbox('my_menber[]', $character->id, null,  ['class' => 'disabled_checkbox'])}}
+                    {{$character->name}}</label>
+                 </div></li>   
             @endif
         @endforeach
         <p>後衛</p>
         @foreach ($characters as $character)
             @if ($character->position == 3)
-                {!! Form::label('name', $character->name) !!}
-                {{Form::checkbox('my_menber[]', $character->id)}}
+                <li><div class="image_box form-group" >
+                    <label>
+                    <img class="thumbnail" src="{{ secure_asset($character->image) }}">
+                    {{Form::checkbox('my_menber[]', $character->id, null,  ['class' => 'disabled_checkbox'])}}
+                    {{$character->name}}</label>
+                 </div></li>   
             @endif
         @endforeach
         
@@ -40,22 +48,34 @@
         <p>前衛</p>
         @foreach ($characters as $character)
             @if ($character->position == 1)
-                {!! Form::label('name', $character->name) !!}
-                {{Form::checkbox('enemy_menber[]', $character->id)}}
+                <li><div class="image_box form-group" >
+                    <label>
+                    <img class="thumbnail" src="{{ secure_asset($character->image) }}">
+                    {{Form::checkbox('enemy_menber[]', $character->id, null,  ['class' => 'disabled_checkbox'])}}
+                    {{$character->name}}</label>
+                 </div></li>   
             @endif
         @endforeach
         <p>中衛</p>
         @foreach ($characters as $character)
             @if ($character->position == 2)
-                {!! Form::label('name', $character->name) !!}
-                {{Form::checkbox('enemy_menber[]', $character->id)}}
+                <li><div class="image_box form-group" >
+                    <label>
+                    <img class="thumbnail" src="{{ secure_asset($character->image) }}">
+                    {{Form::checkbox('enemy_menber[]', $character->id, null,  ['class' => 'disabled_checkbox'])}}
+                    {{$character->name}}</label>
+                 </div></li>   
             @endif
         @endforeach
         <p>後衛</p>
         @foreach ($characters as $character)
             @if ($character->position == 3)
-                {!! Form::label('name', $character->name) !!}
-                {{Form::checkbox('enemy_menber[]', $character->id)}}
+                <li><div class="image_box form-group" >
+                    <label>
+                    <img class="thumbnail" src="{{ secure_asset($character->image) }}">
+                    {{Form::checkbox('enemy_menber[]', $character->id, null,  ['class' => 'disabled_checkbox'])}}
+                    {{$character->name}}</label>
+                 </div></li>   
             @endif
         @endforeach
         </ul>
