@@ -52,7 +52,7 @@ class Win_menbersController extends Controller
         $date  = Carbon::create($request->year,$request->month,$request->day)->toDateString();;
         $env = \DB::table('environments')->select('id')
             ->whereDate('date','<=',$date)
-            ->orderby('date','asc')->first();
+            ->orderby('date','desc')->first();
         
         //データ入れる
         $win_menber = new Win_menber;
