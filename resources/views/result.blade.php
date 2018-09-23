@@ -99,5 +99,5 @@
 
 
 {{--{!! $results->render() !!}--}}
-    @include('selectform',['characters' => $characters])
+{{--    @include('selectform',['characters' => $characters])　--}}
 @endsection
