@@ -8,9 +8,12 @@
     </div>
 
         @foreach ($characters as $character)
-            {{Form::radio('character', $character->id)}}
-            {!! Form::label('name', $character->name) !!}
-            {!! link_to_route('characters.show', '選択したキャラを編集', ['id' => $character->id], ['class' => 'btn btn-default']) !!}
+            <div>
+                {!! Form::label('name', $character->name) !!}
+                {!! link_to_route('characters.show', 'このキャラを編集', ['id' => $character->id], ['class' => 'btn btn-default']) !!}
+            </div>
         @endforeach
 
+    {!! link_to_route('characters.create', '新規キャラを作成', ['id' => $character->id], ['class' => 'btn btn-info']) !!}
+    
 @endsection        
