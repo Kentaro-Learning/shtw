@@ -226,7 +226,7 @@ class Win_menbersController extends Controller
         }
         $env = \DB::table('environments')->select('*')
             ->where('id','=',$request->env_id)->first();
-        $characters = Character::all();
+        $characters = Character::orderby('id', 'asc')->get();
         //dd($characters);
         return view('result',[
             'results' => $results,
