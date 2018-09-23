@@ -68,27 +68,27 @@
     @foreach ($results as $result)
         <tr class="image_list">
             <td><div class="image_box form-group" >
-                <img class="image img-responsive" src="{{ secure_asset($characters[($result->enemy5_id)]->image) }}">
+                <img class="image img-responsive" src="{{ secure_asset($characters[($result->my5_id)]->image) }}">
                 {!! nl2br(e($characters[$result->my5_id]->name)) !!}
                 {!! nl2br(e("【星".$result->my5_star."】")) !!}
             </div></td>
             <td><div class="image_box form-group" >
-                <img class="image img-responsive" src="{{ secure_asset($characters[($result->enemy4_id)]->image) }}">
+                <img class="image img-responsive" src="{{ secure_asset($characters[($result->my4_id)]->image) }}">
                 {!! nl2br(e($characters[$result->my4_id]->name)) !!}
                 {!! nl2br(e("【星".$result->my4_star."】")) !!}
             </div></td>
             <td><div class="image_box form-group" >
-                <img class="image img-responsive" src="{{ secure_asset($characters[($result->enemy3_id)]->image) }}">
+                <img class="image img-responsive" src="{{ secure_asset($characters[($result->my3_id)]->image) }}">
                 {!! nl2br(e($characters[$result->my3_id]->name)) !!}
                 {!! nl2br(e("【星".$result->my3_star."】")) !!}
             </div></td>
             <td><div class="image_box form-group" >
-                <img class="image img-responsive" src="{{ secure_asset($characters[($result->enemy2_id)]->image) }}">            
+                <img class="image img-responsive" src="{{ secure_asset($characters[($result->my2_id)]->image) }}">            
                 {!! nl2br(e($characters[$result->my2_id]->name)) !!}
                 {!! nl2br(e("【星".$result->my2_star."】")) !!}
             </div></td>
             <td><div class="image_box form-group" >
-                <img class="image img-responsive" src="{{ secure_asset($characters[($result->enemy1_id)]->image) }}">            
+                <img class="image img-responsive" src="{{ secure_asset($characters[($result->my1_id)]->image) }}">            
                 {!! nl2br(e($characters[$result->my1_id]->name)) !!}
                 {!! nl2br(e("【星".$result->my1_star."】")) !!}
             </div></td>
