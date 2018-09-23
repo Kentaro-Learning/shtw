@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col-xs-6">
-            {!! Form::model(['route' => 'characters.store', 'method' => 'post', 'class' => 'form', 'files' => true]) !!}
+            {!! Form::open(['route' => 'characters.store', 'method' => 'post', 'class' => 'form', 'files' => true]) !!}
 
                 <div class="form-group">
                     {!! Form::label('name', 'キャラ名:') !!}

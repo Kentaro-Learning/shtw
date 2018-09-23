@@ -46,9 +46,7 @@ class CharactersController extends Controller
         $validatedData = $request->validate([
             'image' => 'required',
         ]);
-        $validatedData = $files->validate([
-            'image' => 'required',
-        ]);  
+
         $image = $request->file('image');
         $path = Storage::disk('s3')->putFile('characters', $image, 'public');
         $url = Storage::disk('s3')->url($path);
@@ -65,6 +63,7 @@ class CharactersController extends Controller
         $make_chara->save();
         ///既存キャラのorder更新_後ろ倒しにする///
         $new_order = $request->order;
+
         foreach($position_cs as $position_c)
         {
             $new_order++;

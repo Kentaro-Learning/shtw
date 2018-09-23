@@ -44,6 +44,6 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 // ログイン状態の'admin'ユーザーのみアクセス可能
 Route::group(['middleware' => ['auth', 'can:admin']], function () {
-    Route::resource('environments', 'EnvironmentsController');
+    //Route::resource('environments', 'EnvironmentsController');
     Route::resource('characters', 'CharactersController');
 });
