@@ -167,7 +167,7 @@ class Win_menbersController extends Controller
             ->where('enemy4_id',$enemy_ids[3])
             ->where('enemy5_id',$enemy_ids[4])
             ->where('env_id',$env->id)->get();
-        dd($results);
+        //dd($results);
         $exist = $results->count();    
         if(empty($exist)){
             return Redirect()->back()->with('message','検索結果が存在しません');
