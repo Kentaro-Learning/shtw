@@ -26,31 +26,31 @@
         <ul class="image_list">
             <li><div class="image_box form-group" >
                 <img class="image" src="{{ secure_asset($characters[($results[0]->enemy5_id)-1]->image) }}">
-                {{$characters[$results[0]->enemy5_id-1]->name}}
+                {{$characters[$results[0]->enemy5_id]->name}}
                 {!!Form::hidden('more_id1', $results[0]->enemy5_id) !!}
                 {{Form::select('more_star[]', $select_star, null, ['class' => 'form', 'id' => 'more_star[]']) }}
             </div></li>
             <li><div class="image_box form-group" >
                 <img class="image" src="{{ secure_asset($characters[($results[0]->enemy4_id)-1]->image) }}">
-                {{$characters[$results[0]->enemy4_id-1]->name}}
+                {{$characters[$results[0]->enemy4_id]->name}}
                 {!!Form::hidden('more_id2', $results[0]->enemy4_id) !!}
                 {{Form::select('more_star[]', $select_star, null, ['class' => 'form', 'id' => 'more_star[]']) }}
             </div></li>
             <li><div class="image_box form-group" >
                 <img class="image" src="{{ secure_asset($characters[($results[0]->enemy3_id)-1]->image) }}">
-                {{$characters[$results[0]->enemy3_id-1]->name}}
+                {{$characters[$results[0]->enemy3_id]->name}}
                 {!!Form::hidden('more_id3', $results[0]->enemy3_id) !!}
                 {{Form::select('more_star[]', $select_star, null, ['class' => 'form', 'id' => 'more_star[]']) }}
             </div></li>
             <li><div class="image_box form-group" >
                 <img class="image" src="{{ secure_asset($characters[($results[0]->enemy2_id)-1]->image) }}">
-                {{$characters[$results[0]->enemy2_id-1]->name}}
+                {{$characters[$results[0]->enemy2_id]->name}}
                 {!!Form::hidden('more_id4', $results[0]->enemy2_id) !!}
                 {{Form::select('more_star[]', $select_star, null, ['class' => 'form', 'id' => 'more_star[]']) }}
             </div></li>
             <li><div class="image_box form-group" >
                 <img class="image" src="{{ secure_asset($characters[($results[0]->enemy1_id)-1]->image) }}">
-                {{$characters[$results[0]->enemy1_id-1]->name}}
+                {{$characters[$results[0]->enemy1_id]->name}}
                 {!!Form::hidden('more_id5', $results[0]->enemy1_id) !!}
                 {{Form::select('more_star[]', $select_star, null, ['class' => 'form', 'id' => 'more_star[]']) }}
             </div></li>
