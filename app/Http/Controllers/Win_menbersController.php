@@ -174,7 +174,8 @@ class Win_menbersController extends Controller
             return Redirect()->back()->with('message','検索結果が存在しません');
         }
         
-        $characters = Character::all();
+        //$characters = Character::all();
+        $characters = Character::orderby('id', 'asc')->get();
         //dd($characters);
         return view('result',[
             'results' => $results,
