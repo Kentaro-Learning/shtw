@@ -137,6 +137,7 @@ class Win_menbersController extends Controller
     }
     public function show_result(Request $request)
     {
+        dd($request);
         for($i = 0 ;$i <= 4;$i++)
         {
             $enemy_id = $request->enemy_id[$i];
