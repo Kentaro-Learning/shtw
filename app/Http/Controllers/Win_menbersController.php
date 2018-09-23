@@ -159,7 +159,7 @@ class Win_menbersController extends Controller
         //dd($date);
         $env = \DB::table('environments')->select('*')
             ->whereDate('date','<=',$date)
-            ->orderby('date','asc')->first();
+            ->orderby('date','desc')->first();
         //dd($env);
         $results = \DB::table('win_menbers')
             ->where('enemy1_id',$enemy_ids[0])
