@@ -146,16 +146,19 @@ class Win_menbersController extends Controller
     public function show_result(Request $request)
     {
         //dd($request);
-        if(empty($request->my_menber)|empty($request->enemy_menber)){
-            return Redirect()->back()->withInput()->with('message','選択したキャラ数が不正です');
+        //if(empty($request->my_menber)|empty($request->enemy_menber)){
+        //$c = empty($request->enemy_id);
+        //dd($c);
+        if(empty($request->enemy_id)){
+            return Redirect()->back()->with('message','選択したキャラ数が不正です');
         }
         
-        $cnt_my    = count($request->my_menber) == 5 ;
-        $cnt_enemy = count($request->enemy_menber) == 5 ;
-         if ($cnt_my && $cnt_enemy) 
+        //$cnt_my    = count($request->my_menber) == 5 ;
+        $cnt_enemy = count($request->enemy_id) == 5 ;
+         if ($cnt_enemy) 
         {
         }else{
-            return Redirect()->back()->withInput()->with('message','選択したキャラ数が不正です');
+            return Redirect()->back()->with('message','選択したキャラ数が不正です');
         }
             
         for($i = 0 ;$i <= 4;$i++)
