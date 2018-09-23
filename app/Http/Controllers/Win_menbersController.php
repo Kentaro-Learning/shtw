@@ -48,6 +48,8 @@ class Win_menbersController extends Controller
     {
         //データチェック
         //dd($request);
+        
+        
         //データ引き寄せ
         $date  = Carbon::create($request->year,$request->month,$request->day)->toDateString();;
         $env = \DB::table('environments')->select('id')
@@ -58,6 +60,9 @@ class Win_menbersController extends Controller
         $win_menber = new Win_menber;
         for($i = 1; $i <= 5 ; $i++)
         {
+            if($request->my_star[5-$i] == 0|$request->enemy_star[5-$i] == 0){
+                return Redirect('/')->with('message','星を選択してください');
+            }
             $win_menber->{'my'.$i.'_id'} =  $request->my_id[5-$i];
             $win_menber->{'my'.$i.'_star'} =  $request->my_star[5-$i];
             $win_menber->{'enemy'.$i.'_id'} =  $request->enemy_id[5-$i];
