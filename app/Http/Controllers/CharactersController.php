@@ -63,15 +63,15 @@ class CharactersController extends Controller
         $make_chara->save();
         ///既存キャラのorder更新_後ろ倒しにする///
         $new_order = $request->order;
-
-        foreach($position_cs as $position_c)
-        {
-            $new_order++;
-            $position_c->order = $new_order;
-            $position_c->save();
-            
+        if(isset($position_cs)){
+            foreach($position_cs as $position_c)
+            {
+                $new_order++;
+                $position_c->order = $new_order;
+                $position_c->save();
+                
+            }
         }
-        
         return redirect('/')->with('information','キャラ作成成功');
     }
 
@@ -120,7 +120,8 @@ class CharactersController extends Controller
         $character->order = $character->order;
         
         $image = $request->file('image');
-         $if = isset($image);
+        //$if(isset($image))
+        if(isset($image))
         {
             $path = Storage::disk('s3')->putFile('characters', $image, 'public');
             $url = Storage::disk('s3')->url($path);
