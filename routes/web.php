@@ -16,16 +16,22 @@ Route::get('/', function () {
 });
 */
 
+/////認証設定ここから
+Route::group(['middleware' => 'auth.very_basic', 'prefix' => ''], function() {
+
 Route::get('/','Win_menbersController@index');
 Route::post('result', 'Win_menbersController@show_result')->name('result');
 Route::get('result', 'Win_menbersController@show')->name('result');
 Route::post('result_more', 'Win_menbersController@show_result_more')->name('result_more');
-//Route::get('result', 'Win_menbersController@show_more')->name('result_more');
+
 
 //新規投稿
 Route::resource('Win_menbers', 'Win_menbersController');
 Route::post('Win_menbers/pre_create','Win_menbersController@pre_store')->name('Win_menbers.pre_store');
-//Route::resource('characters', 'CharactersController');
+
+});
+/////認証設定ここまで
+
 
 
 //投稿編集
