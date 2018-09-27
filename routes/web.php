@@ -17,7 +17,7 @@ Route::get('/', function () {
 */
 
 /////認証設定ここから
-Route::group(['middleware' => 'auth.very_basic', 'prefix' => ''], function() {
+///Route::group(['middleware' => 'auth.very_basic', 'prefix' => ''], function() {
 
 Route::get('/','Win_menbersController@index');
 Route::post('result', 'Win_menbersController@show_result')->name('result');
@@ -29,7 +29,7 @@ Route::post('result_more', 'Win_menbersController@show_result_more')->name('resu
 Route::resource('Win_menbers', 'Win_menbersController');
 Route::post('Win_menbers/pre_create','Win_menbersController@pre_store')->name('Win_menbers.pre_store');
 
-});
+///});
 /////認証設定ここまで
 
 
